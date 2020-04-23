@@ -60,6 +60,26 @@ async function generateLaunchScreens ({
     } catch (err) {
       console.error(err)
     }
+
+    /*
+      https://docs.meteor.com/api/mobile-config.html#App-launchScreens
+
+      "For Android, launch screen images should be special "Nine-patch" image files that specify how they should be stretched."
+
+      https://developer.android.com/guide/topics/graphics/drawables#nine-patch
+    */
+    if (launchScreenId.startsWith('android')) {
+      const left = Math.floor((targetWidth - coverSize) * 0.5)
+      const top = Math.floor((targetHeight - coverSize) * 0.5)
+      const right = left + coverSize
+      const bottom = top + coverSize
+      const slice = utils.createSlice(left, top, right, bottom)
+      try {
+        await utils.promiseNinePatchifyImage(slice, compositePath, compositePath)
+      } catch (err) {
+        console.error(err)
+      }
+    }
   }
 
   console.log('Cleaning Up Temporaries...')
