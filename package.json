@@ -1,0 +1,12 @@
+{
+  "name": "resource-processing",
+  "version": "1.0.0",
+  "description": "Mobile Resource Processing Scripts",
+  "main": "index.js",
+  "author": "Richard Marks <ccpsceo@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "yargs": "^15.3.1"
+  }
+}
