@@ -30,7 +30,7 @@ async function generateIcons ({ source, ICONS_DIR }) {
 const options = yargs
   .coerce(['source', 'workspace'], path.resolve)
   .default('workspace', 'workspace')
-  .default('source', 'source.png')
+  .default('source', 'icon-source.png')
   .option('workspace', {
     alias: 'w',
     describe: 'Working Directory'
