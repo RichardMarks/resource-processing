@@ -12,10 +12,21 @@ cd resource-processing
 yarn install
 ```
 
-Put a `source.png` image in the current directory
+These scripts depend on ImageMagick being available on your operating system.
+
+Install ImageMagick https://imagemagick.org/ if you do not have it installed
+
+homebrew on macOS
+
+```
+brew install imagemagick
+```
+
+Next, put a `source.png` image and `icon-source.png` image in the current directory.
 
 ```
 cp path/to/my/source/image.png source.png
+cp path/to/my/icon/source/image.png icon-source.png
 ```
 
 Run the scripts
